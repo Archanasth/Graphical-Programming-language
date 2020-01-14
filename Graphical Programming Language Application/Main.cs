@@ -529,7 +529,8 @@ namespace Graphical_Programming_Language_Application
             //------------------------------------------------------------------------------------------1,3,4,6,7,9,10,12,13,15,16,18
             
 
-            Regex regexClear = new Regex(@"clear board");
+            Regex regexClear = new Regex(@"clear");
+            Regex regexReset = new Regex(@"reset");
             Regex regexMT = new Regex(@"moveto (.*[\d])([,])(.*[\d])");
             
             Regex regexR = new Regex(@"rectangle (.*[\d])([,])(.*[\d])");
@@ -549,6 +550,7 @@ namespace Graphical_Programming_Language_Application
             Match match5 = regex5.Match(rtxt_console.Text.ToLower());
 
             Match matchClear = regexClear.Match(rtxt_console.Text.ToLower());
+            Match matchReset = regexReset.Match(rtxt_console.Text.ToLower());
             Match matchMT = regexMT.Match(rtxt_console.Text.ToLower());
 
             Match matchR = regexR.Match(rtxt_console.Text.ToLower());
@@ -778,7 +780,7 @@ namespace Graphical_Programming_Language_Application
                     _size8 = int.Parse(match5.Groups[12].Value);
                     _size9 = int.Parse(match5.Groups[13].Value);
                     _size10 = int.Parse(match5.Groups[15].Value);
-                    
+
                     ShapeFactory shapeFactory = new ShapeFactory();
                     Shape c = shapeFactory.GetShape("polygon");
                     c.set(texturestyle, bb, paintcolor, _size1, _size2, _size3, _size4, _size5, _size6, _size7, _size8, _size9, _size10);
@@ -794,10 +796,17 @@ namespace Graphical_Programming_Language_Application
 
             //================================================ CLEAR BOARD ====================================================================
 
-            else if(matchClear.Success)
+            else if (matchClear.Success)
             {
                 drawareapanel.Refresh();
                 this.drawareapanel.BackgroundImage = null;
+            }
+            else if (matchReset.Success)
+            {
+                _size1 = 0;
+                _size2 = 0;
+                lbl_StartPosX.Text = _size1.ToString();
+                lbl_StartPosY.Text = _size2.ToString();
             }
 
             //================================================= MOVETO ==========================================================
@@ -820,7 +829,7 @@ namespace Graphical_Programming_Language_Application
             }
 
             //======================================================== REPEAT ====================================================
-            else if(matchRepeat.Success)
+            else if (matchRepeat.Success)
             {
                 try
                 {
@@ -849,7 +858,7 @@ namespace Graphical_Programming_Language_Application
                         _size3 = int.Parse(matchRepCircle.Groups[1].Value);
                         _repeatAdd = int.Parse(matchRepCircle.Groups[2].Value);
                         _repeatAddConstant = int.Parse(matchRepCircle.Groups[2].Value);
-                        
+
                         ShapeFactory shapeFactory = new ShapeFactory();
                         Shape c = shapeFactory.GetShape("circle");
 
@@ -900,8 +909,8 @@ namespace Graphical_Programming_Language_Application
                                 _repeatAddWidth = _repeatAddWidth + _repeatAddConstantWidth;
                                 _repeatAddHeight = _repeatAddHeight + _repeatAddConstantHeight;
                             }
-                            
-                            
+
+
                         }
                         catch (Exception ex)
                         {
@@ -911,7 +920,7 @@ namespace Graphical_Programming_Language_Application
 
                     }
 
-              //=============================================== IF ELSE ==================================================
+                    //=============================================== IF ELSE ==================================================
 
                     else if (matchIfelse.Success)
                     {
@@ -927,7 +936,7 @@ namespace Graphical_Programming_Language_Application
                             _size2 = checkY;
                             if (checkX > 0 && checkY > 0)
                             {
-                                
+
                                 //===============
                                 Regex regexIfelseCircle = new Regex(@"draw circle (.*[\d])");
                                 Match matchIfelseCircle = regexIfelseCircle.Match(rtxt_console.Text.ToLower());
@@ -991,7 +1000,7 @@ namespace Graphical_Programming_Language_Application
                                 }
                             }
 
-                            
+
 
                         }
                         catch (Exception ex)
@@ -1041,6 +1050,7 @@ namespace Graphical_Programming_Language_Application
 
         
         
+
         
 
         private void consoleToolStripMenuItem_Click_1(object sender, EventArgs e)

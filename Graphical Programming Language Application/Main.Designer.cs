@@ -357,7 +357,7 @@
             this.btn_consolerun.Name = "btn_consolerun";
             this.btn_consolerun.Size = new System.Drawing.Size(92, 23);
             this.btn_consolerun.TabIndex = 4;
-            this.btn_consolerun.Text = "Execute";
+            this.btn_consolerun.Text = "Run";
             this.btn_consolerun.UseVisualStyleBackColor = false;
             this.btn_consolerun.Click += new System.EventHandler(this.btn_consolerun_Click);
             // 
