@@ -265,32 +265,32 @@ namespace Graphical_Programming_Language_Application
 
         private void btn_square_Click(object sender, EventArgs e)
         {
-            //selectshape = 3;
+            selectshape = 3;
         }
 
         private void btn_elipse_Click(object sender, EventArgs e)
         {
-            //selectshape =4;
+            selectshape =4;
         }
 
         private void btn_triangle_Click(object sender, EventArgs e)
         {
-           // selectshape = 5;
+            selectshape = 5;
         }
 
         private void btn_polygon_Click(object sender, EventArgs e)
         {
-            //selectshape = 6;
+            selectshape = 6;
         }
 
         private void btn_Rectangle_Click(object sender, EventArgs e)
         {
-          //  selectshape = 2;
+          selectshape = 2;
         }
 
         private void btn_pen_Click(object sender, EventArgs e)
         {
-          //  selectshape = 1;
+          selectshape = 1;
         }
 
         private void openImageToolStripMenuItem_Click(object sender, EventArgs e)

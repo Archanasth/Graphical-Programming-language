@@ -31,6 +31,11 @@ namespace Graphical_Programming_Language_Application
             {
                 return new Triangle();
             }
+            else if (shapeType == "polygon")
+                {
+                return new Polygon();
+
+            }
             return null;
         }
     }

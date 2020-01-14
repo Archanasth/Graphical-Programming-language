@@ -34,6 +34,11 @@
             this.btn_Close = new System.Windows.Forms.Button();
             this.lbl_appname = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbl_StartPosX = new System.Windows.Forms.Label();
+            this.lbl_StartPosY = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,6 +50,7 @@
             this.saveImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutUSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showcolorbox = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.rtxt_console = new System.Windows.Forms.RichTextBox();
@@ -57,12 +63,6 @@
             this.rtxt_history = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.drawareapanel = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lbl_StartPosY = new System.Windows.Forms.Label();
-            this.lbl_StartPosX = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.aboutUSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -145,6 +145,59 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(866, 69);
             this.panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(641, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 19);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Start Position :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label9.Location = new System.Drawing.Point(744, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(17, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "X:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // lbl_StartPosX
+            // 
+            this.lbl_StartPosX.AutoSize = true;
+            this.lbl_StartPosX.ForeColor = System.Drawing.Color.White;
+            this.lbl_StartPosX.Location = new System.Drawing.Point(767, 17);
+            this.lbl_StartPosX.Name = "lbl_StartPosX";
+            this.lbl_StartPosX.Size = new System.Drawing.Size(25, 13);
+            this.lbl_StartPosX.TabIndex = 9;
+            this.lbl_StartPosX.Text = "000";
+            this.lbl_StartPosX.Click += new System.EventHandler(this.lbl_StartPosX_Click);
+            // 
+            // lbl_StartPosY
+            // 
+            this.lbl_StartPosY.AutoSize = true;
+            this.lbl_StartPosY.ForeColor = System.Drawing.Color.White;
+            this.lbl_StartPosY.Location = new System.Drawing.Point(821, 17);
+            this.lbl_StartPosY.Name = "lbl_StartPosY";
+            this.lbl_StartPosY.Size = new System.Drawing.Size(25, 13);
+            this.lbl_StartPosY.TabIndex = 10;
+            this.lbl_StartPosY.Text = "000";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label10.Location = new System.Drawing.Point(798, 17);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(17, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Y:";
             // 
             // label1
             // 
@@ -252,6 +305,15 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // aboutUSToolStripMenuItem
+            // 
+            this.aboutUSToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.aboutUSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.aboutUSToolStripMenuItem.Name = "aboutUSToolStripMenuItem";
+            this.aboutUSToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.aboutUSToolStripMenuItem.Text = "About US";
+            this.aboutUSToolStripMenuItem.Click += new System.EventHandler(this.aboutUSToolStripMenuItem_Click);
             // 
             // showcolorbox
             // 
@@ -393,68 +455,6 @@
             this.drawareapanel.MouseLeave += new System.EventHandler(this.drawareapanel_MouseLeave);
             this.drawareapanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawareapanel_MouseMove);
             this.drawareapanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawareapanel_MouseUp);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label10.Location = new System.Drawing.Point(798, 17);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 13);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Y:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label9.Location = new System.Drawing.Point(744, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(17, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "X:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // lbl_StartPosY
-            // 
-            this.lbl_StartPosY.AutoSize = true;
-            this.lbl_StartPosY.ForeColor = System.Drawing.Color.White;
-            this.lbl_StartPosY.Location = new System.Drawing.Point(821, 17);
-            this.lbl_StartPosY.Name = "lbl_StartPosY";
-            this.lbl_StartPosY.Size = new System.Drawing.Size(25, 13);
-            this.lbl_StartPosY.TabIndex = 10;
-            this.lbl_StartPosY.Text = "000";
-            // 
-            // lbl_StartPosX
-            // 
-            this.lbl_StartPosX.AutoSize = true;
-            this.lbl_StartPosX.ForeColor = System.Drawing.Color.White;
-            this.lbl_StartPosX.Location = new System.Drawing.Point(767, 17);
-            this.lbl_StartPosX.Name = "lbl_StartPosX";
-            this.lbl_StartPosX.Size = new System.Drawing.Size(25, 13);
-            this.lbl_StartPosX.TabIndex = 9;
-            this.lbl_StartPosX.Text = "000";
-            this.lbl_StartPosX.Click += new System.EventHandler(this.lbl_StartPosX_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(641, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 19);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Start Position :";
-            // 
-            // aboutUSToolStripMenuItem
-            // 
-            this.aboutUSToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.aboutUSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.aboutUSToolStripMenuItem.Name = "aboutUSToolStripMenuItem";
-            this.aboutUSToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.aboutUSToolStripMenuItem.Text = "About US";
-            this.aboutUSToolStripMenuItem.Click += new System.EventHandler(this.aboutUSToolStripMenuItem_Click);
             // 
             // Main
             // 
