@@ -24,7 +24,7 @@ namespace Graphical_Programming_Language_Application
         int selectshape = 0;
 
         /// <summary>
-        /// for system color dialog box
+        /// System color dialog box
         /// </summary>
         Color paintcolor = Color.Black;
 
@@ -39,14 +39,12 @@ namespace Graphical_Programming_Language_Application
         {
             InitializeComponent();
             g = drawareapanel.CreateGraphics();
-            p = new Pen(showcolorbox.BackColor);
-
+           
             int x_canvas = drawareapanel.Width / 2;
             int y_canvas = drawareapanel.Height / 2;
             lbl_StartPosX.Text = x_canvas.ToString();
             lbl_StartPosY.Text = y_canvas.ToString();
-            //lbl_canvasx.Text = x_canvas.ToString();
-           // lbl_canvasy.Text = y_canvas.ToString();
+            
 
             
             bb = new HatchBrush(HatchStyle.Vertical, Color.Red, Color.FromArgb(255, 128, 255, 255));
@@ -56,34 +54,18 @@ namespace Graphical_Programming_Language_Application
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
-        {
+        {//......................code for exit button.......................//
             Application.Exit();
         }
-        /// <summary>
-        /// to minimize the windows form from miniize button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
+      
         private void btn_Minimize_Click(object sender, EventArgs e)
         {
+            /// <summary>
+            /// to minimize the windows form from miniize button
+            /// </summary>
             this.WindowState = FormWindowState.Minimized;
         }
-
-        
-
-        
-
-        
-
-        
-        /// <summary>
-        /// to show the color dialog box
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        
-
-        
 
         private void Main_Load(object sender, EventArgs e)
         {
@@ -156,8 +138,7 @@ namespace Graphical_Programming_Language_Application
         private void drawareapanel_MouseMove(object sender, MouseEventArgs e)
         {
             
-            //lbl_cursorx.Text = e.X.ToString();
-            //lbl_cursory.Text = e.Y.ToString();
+            
             if (start)
             {
                 if (selectshape == 1)
@@ -172,14 +153,7 @@ namespace Graphical_Programming_Language_Application
                 }
                 else if (selectshape == 2)
                 {
-                    //g.DrawRectangle(p, Math.Min(e.X,x1), Math.Min(e.Y, y1),Math.Abs(e.X-x1), Math.Abs(e.Y - y1));
-
-                    //if (x>0 && y>0)
-                    //{
-                    //    g.DrawRectangle(p, x1, y1, x3, y3);
-                    //}
-
-                    //Invalidate();
+                    
                     if (x > 0 && y > 00)
                     {
 
@@ -219,24 +193,7 @@ namespace Graphical_Programming_Language_Application
 
         }
 
-        private void showcolorbox_Click(object sender, EventArgs e)
-        {
-            texturestyle = 0;
-            ColorDialog c = new ColorDialog();
-            c.ShowDialog();
-            paintcolor = c.Color;
-
-            showcolorbox.BackColor = paintcolor;
-            p.Color = c.Color;
-
-            //------------------
-            
-            //-----------------
-            //HatchBrush hBrush = new HatchBrush(HatchStyle.Horizontal, Color.Red, Color.FromArgb(255, 128, 255, 255));
-            //hBrush.HatchStyle = showtexturebox.BackColor;
-            
-            //------------------
-        }
+      
 
         private void txt_console1_TextChanged(object sender, EventArgs e)
         {
@@ -263,96 +220,12 @@ namespace Graphical_Programming_Language_Application
 
         
 
-        private void btn_square_Click(object sender, EventArgs e)
-        {
-            selectshape = 3;
-        }
+     
+       
 
-        private void btn_elipse_Click(object sender, EventArgs e)
-        {
-            selectshape =4;
-        }
+       
 
-        private void btn_triangle_Click(object sender, EventArgs e)
-        {
-            selectshape = 5;
-        }
-
-        private void btn_polygon_Click(object sender, EventArgs e)
-        {
-            selectshape = 6;
-        }
-
-        private void btn_Rectangle_Click(object sender, EventArgs e)
-        {
-          selectshape = 2;
-        }
-
-        private void btn_pen_Click(object sender, EventArgs e)
-        {
-          selectshape = 1;
-        }
-
-        private void openImageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog o = new OpenFileDialog();
-            o.Filter = "PNG Files|*.png|JPEG Files|*.jpeg|Bitmap|*.bmp";
-            if (o.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                drawareapanel.BackgroundImage = (Image)Image.FromFile(o.FileName).Clone();
-                drawareapanel.BackgroundImageLayout = ImageLayout.Zoom;
-            }
-            MessageBox.Show("open");
-        }
-
-        private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Bitmap bmp = new Bitmap(drawareapanel.Width, drawareapanel.Height);
-            ////Graphics g = Graphics.FromImage(bmp);
-            ////Rectangle rect = drawareapanel.RectangleToScreen(drawareapanel.ClientRectangle);
-            ////g.CopyFromScreen(rect.Location, Point.Empty, drawareapanel.Size);
-            ////g.Dispose();
-
-            //SaveFileDialog s = new SaveFileDialog();
-            //s.Filter = "PNG Files|*.png|JPEG Files|*.jpeg|Bitmap|*.bmp";
-            //if (s.ShowDialog() == DialogResult.OK)
-            //{
-
-            //    if (s.FileName.Contains(".jpg"))
-            //    {
-            //        bmp.Save(s.FileName, ImageFormat.Jpeg);
-            //    }
-            //    else if (s.FileName.Contains(".png"))
-            //    {
-            //        bmp.Save(s.FileName, ImageFormat.Png);
-            //    }
-            //    else if (s.FileName.Contains(".bmp"))
-            //    {
-            //        bmp.Save(s.FileName, ImageFormat.Bmp);
-            //    }
-            //}
-
-            //----------------------------
-            SaveFileDialog sfdlg = new SaveFileDialog();
-            sfdlg.Title = "Save Dialog";
-            sfdlg.Filter = "Bitmap Images (*.bmp)|*.bmp|All files(*.*)|*.*";
-            if (sfdlg.ShowDialog(this) == DialogResult.OK)
-            {
-                using (Bitmap bmp = new Bitmap(drawareapanel.Width, drawareapanel.Height))
-                {
-
-                    //drawareapanel.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-                    drawareapanel.Image = new Bitmap(drawareapanel.Width, drawareapanel.Height);
-                    drawareapanel.Image.Save(sfdlg.FileName);
-                    bmp.Save(sfdlg.FileName);
-                    MessageBox.Show("Saved Successfully.....");
-
-                }
-            }
-            //-----------
-            //rtxt_console.SaveFile(sv.FileName, RichTextBoxStreamType.PlainText);
-            //-----------------------------
-        }
+       
 
         private void openTextToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -407,41 +280,28 @@ namespace Graphical_Programming_Language_Application
 
         private void texture5_Click(object sender, EventArgs e)
         {
-           // texturestyle = 5;
-          //  bb = new HatchBrush(HatchStyle.Vertical, Color.Red, Color.Yellow);
-           // showtexturebox.BackgroundImage = texture5.BackgroundImage;
+           
         }
 
         private void texture4_Click(object sender, EventArgs e)
         {
-           // texturestyle = 4;
-           // bb = new HatchBrush(HatchStyle.Horizontal, Color.Red, Color.Yellow);
-           // showtexturebox.BackgroundImage = texture4.BackgroundImage;
+          
         }
 
         private void texture3_Click(object sender, EventArgs e)
         {
             bb = new HatchBrush(HatchStyle.ForwardDiagonal, Color.Red, Color.Yellow);
             texturestyle = 3;
-          //  showtexturebox.BackgroundImage = texture3.BackgroundImage;
         }
 
         private void texture2_Click(object sender, EventArgs e)
         {
-          //  bb = new HatchBrush(HatchStyle.DiagonalCross, Color.Red, Color.Yellow);
-          //  texturestyle = 2;
-            //showtexturebox.BackgroundImage = texture2.BackgroundImage;
         }
 
         private void texture1_Click(object sender, EventArgs e)
         {
-            //texturestyle = 1;
-           // bb = new HatchBrush(HatchStyle.Cross, Color.Red, Color.Yellow);
-         //   showtexturebox.BackgroundImage = texture1.BackgroundImage;
         }
 
-        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-        //==============================================================================================================
         //======================-----=====----======================DECLARING =========================---------- *  *  * * * * ** * 
         public int _size1, _size2, _size3, _size4, _size5, _size6, _size7, _size8, _size9, _size10, _size11, _size12;
 
@@ -450,14 +310,19 @@ namespace Graphical_Programming_Language_Application
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void aboutUSToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("This Project is Developed \n by Bishal Bhandari");
+        }
+
+       
+
+        
+
+        private void BTN_PENTAGON_Click(object sender, EventArgs e)
+        {
+            selectshape = 6;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -480,6 +345,10 @@ namespace Graphical_Programming_Language_Application
 
         }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
         private void showtexturebox_Click_1(object sender, EventArgs e)
         {
 
@@ -580,7 +449,6 @@ namespace Graphical_Programming_Language_Application
                 catch (Exception ex)
                 {
                     rtxt_errors.AppendText(ex.Message + Environment.NewLine);
-                    //MessageBox.Show(ex.Message);
                 }
 
             }
@@ -669,13 +537,11 @@ namespace Graphical_Programming_Language_Application
                     ShapeFactory shapeFactory = new ShapeFactory();
                     Shape c = shapeFactory.GetShape("circle"); 
                     c.set(texturestyle, bb, paintcolor, _size1, _size2, _size3 * 2, _size3 * 2);
-                    //c.draw(set);
                     c.draw(g);
                 }
                 catch (Exception ex)
                 {
                     rtxt_errors.AppendText(ex.Message + Environment.NewLine);
-                    // MessageBox.Show(ex.Message);
                 }
             }
 
@@ -713,7 +579,6 @@ namespace Graphical_Programming_Language_Application
                     ShapeFactory shapeFactory = new ShapeFactory();
                     Shape c = shapeFactory.GetShape("triangle");
                     c.set(texturestyle, bb, paintcolor, xi1,yi1,xi2,yi2,xii1,yii1,xii2,yii2,xiii1,yiii1,xiii2,yiii2);
-                    //=============================== 
                     c.draw(g);
                 }
                 catch (Exception ex)
@@ -752,7 +617,7 @@ namespace Graphical_Programming_Language_Application
                     yiii2 = Math.Abs(_size4);
 
                     ShapeFactory shapeFactory = new ShapeFactory();
-                    Shape c = shapeFactory.GetShape("triangle"); //new rectangles();
+                    Shape c = shapeFactory.GetShape("triangle"); 
                     c.set(texturestyle, bb, paintcolor, xi1, yi1, xi2, yi2, xii1, yii1, xii2, yii2, xiii1, yiii1, xiii2, yiii2);
                     c.draw(g);
                 }
@@ -789,7 +654,6 @@ namespace Graphical_Programming_Language_Application
                 catch (Exception ex)
                 {
                     rtxt_errors.AppendText(ex.Message + Environment.NewLine);
-                    //MessageBox.Show(ex.Message);
                 }
 
             }
@@ -801,6 +665,7 @@ namespace Graphical_Programming_Language_Application
                 drawareapanel.Refresh();
                 this.drawareapanel.BackgroundImage = null;
             }
+            //.......................................RESET..................................//
             else if (matchReset.Success)
             {
                 _size1 = 0;
@@ -823,7 +688,6 @@ namespace Graphical_Programming_Language_Application
                 catch (Exception ex)
                 {
                     rtxt_errors.AppendText(ex.Message + Environment.NewLine);
-                    //MessageBox.Show(ex.Message);
                 }
 
             }
@@ -915,7 +779,6 @@ namespace Graphical_Programming_Language_Application
                         catch (Exception ex)
                         {
                             rtxt_errors.AppendText(ex.Message + Environment.NewLine);
-                            //MessageBox.Show(ex.Message);
                         }
 
                     }
@@ -927,7 +790,6 @@ namespace Graphical_Programming_Language_Application
                         try
                         {
                             int checkX, checkY;
-                            //g = drawareapanel.CreateGraphics();
                             checkX = int.Parse(matchIfelse.Groups[1].Value);
                             checkY = int.Parse(matchIfelse.Groups[2].Value);
                             lbl_StartPosX.Text = checkX.ToString();
@@ -937,7 +799,6 @@ namespace Graphical_Programming_Language_Application
                             if (checkX > 0 && checkY > 0)
                             {
 
-                                //===============
                                 Regex regexIfelseCircle = new Regex(@"draw circle (.*[\d])");
                                 Match matchIfelseCircle = regexIfelseCircle.Match(rtxt_console.Text.ToLower());
 
@@ -961,7 +822,6 @@ namespace Graphical_Programming_Language_Application
                                     catch (Exception ex)
                                     {
                                         rtxt_errors.AppendText(ex.Message + Environment.NewLine);
-                                        // MessageBox.Show(ex.Message);
                                     }
 
 
@@ -1006,7 +866,6 @@ namespace Graphical_Programming_Language_Application
                         catch (Exception ex)
                         {
                             rtxt_errors.AppendText(ex.Message + Environment.NewLine);
-                            //MessageBox.Show(ex.Message);
                         }
 
                     }
@@ -1042,7 +901,6 @@ namespace Graphical_Programming_Language_Application
                 }
                 catch (Exception)
                 {
-                    //rtxt_errors.AppendText(ex.Message + Environment.NewLine);
 
                 }
             }
