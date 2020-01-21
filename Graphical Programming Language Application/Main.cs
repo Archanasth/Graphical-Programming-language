@@ -406,7 +406,7 @@ namespace Graphical_Programming_Language_Application
             Regex regexC = new Regex(@"circle (.*[\d])");
             Regex regexT = new Regex(@"triangle (.*[\d])([,])(.*[\d])([,])(.*[\d])");
 
-            Regex regexRepeat = new Regex(@"repeat (.*[\d])");
+            Regex regexRepeat = new Regex(@"loop (.*[\d])");
 
             Regex regexIfelse = new Regex(@"if drawto x= (.*[\d]) >= 0 or y= (.*[\d]) >= 0 ");
             //if drawto x= 9 >= 0 or y= 19 >= 0
@@ -692,26 +692,26 @@ namespace Graphical_Programming_Language_Application
 
             }
 
-            //======================================================== REPEAT ====================================================
+            //======================================================== Loop ====================================================
             else if (matchRepeat.Success)
             {
                 try
                 {
                     _repeatNo = int.Parse(matchRepeat.Groups[1].Value);
 
-                    //=================================================== Repeat Shapes ====================================
+                    //=================================================== Loop Shapes ====================================
 
                     //Regex regexRepCircle = new Regex(@"circle radius (.*[\d]) by radius (.*[\d]) end");
                     Regex regexRepCircle = new Regex(@"circle radius (.*[\d]) by (.*[\d]) end");
-                    //repeat 4 circle radius 30 by 20 end
+                    //loop 4 circle radius 30 by 20 end
                     Regex regexRepRectangle = new Regex(@"rectangle width (.*[\d]) height (.*[\d]) by width (.*[\d]) height (.*[\d]) end");
-                    //repeat 4 rectangle width 90 height 120 by width 20 height 20
+                    //Loop 4 rectangle width 90 height 120 by width 20 height 20
 
 
                     Match matchRepCircle = regexRepCircle.Match(rtxt_console.Text.ToLower());
                     Match matchRepRectangle = regexRepRectangle.Match(rtxt_console.Text.ToLower());
 
-                    //================================================== Repeat Circle ================================================
+                    //================================================== loop Circle ================================================
                     if (matchRepCircle.Success)
                     {
 
@@ -735,12 +735,11 @@ namespace Graphical_Programming_Language_Application
                             _size2 = _size2 - (_repeatAddConstant / 2);
                             _repeatAdd = _repeatAdd + _repeatAddConstant;
 
-                            //_repeatAdd = _repeatAdd + _repeatAdd;
 
                         }
                     }
 
-                    //=================================================== Repeat Rectangle ==============================================
+                    //=================================================== Loop Rectangle ==============================================
                     else if (matchRepRectangle.Success)
                     {
                         try

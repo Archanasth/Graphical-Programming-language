@@ -58,6 +58,7 @@
             this.rtxt_history = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.drawareapanel = new System.Windows.Forms.PictureBox();
+            this.documentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -75,7 +76,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.btn_Minimize);
             this.panel1.Controls.Add(this.btn_Close);
-            this.panel1.Controls.Add(this.lbl_appname);
             this.panel1.Location = new System.Drawing.Point(-1, 8);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(866, 25);
@@ -116,7 +116,7 @@
             this.lbl_appname.AutoSize = true;
             this.lbl_appname.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_appname.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbl_appname.Location = new System.Drawing.Point(248, -2);
+            this.lbl_appname.Location = new System.Drawing.Point(250, 0);
             this.lbl_appname.Name = "lbl_appname";
             this.lbl_appname.Size = new System.Drawing.Size(270, 27);
             this.lbl_appname.TabIndex = 2;
@@ -129,6 +129,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.lbl_appname);
             this.panel2.Controls.Add(this.lbl_StartPosX);
             this.panel2.Controls.Add(this.lbl_StartPosY);
             this.panel2.Controls.Add(this.label10);
@@ -222,14 +223,14 @@
             this.openTextToolStripMenuItem});
             this.openToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click_1);
             // 
             // openTextToolStripMenuItem
             // 
             this.openTextToolStripMenuItem.Name = "openTextToolStripMenuItem";
-            this.openTextToolStripMenuItem.Size = new System.Drawing.Size(153, 24);
+            this.openTextToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
             this.openTextToolStripMenuItem.Text = "Open Text";
             this.openTextToolStripMenuItem.Click += new System.EventHandler(this.openTextToolStripMenuItem_Click);
             // 
@@ -240,21 +241,22 @@
             this.saveTextToolStripMenuItem});
             this.saveToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(112, 24);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click_1);
             // 
             // saveTextToolStripMenuItem
             // 
             this.saveTextToolStripMenuItem.Name = "saveTextToolStripMenuItem";
-            this.saveTextToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.saveTextToolStripMenuItem.Size = new System.Drawing.Size(138, 24);
             this.saveTextToolStripMenuItem.Text = "Save Text";
             this.saveTextToolStripMenuItem.Click += new System.EventHandler(this.saveTextToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutUSToolStripMenuItem});
+            this.aboutUSToolStripMenuItem,
+            this.documentationToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(50, 23);
@@ -266,7 +268,7 @@
             this.aboutUSToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.aboutUSToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.aboutUSToolStripMenuItem.Name = "aboutUSToolStripMenuItem";
-            this.aboutUSToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.aboutUSToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
             this.aboutUSToolStripMenuItem.Text = "About US";
             this.aboutUSToolStripMenuItem.Click += new System.EventHandler(this.aboutUSToolStripMenuItem_Click);
             // 
@@ -401,6 +403,14 @@
             this.drawareapanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.drawareapanel_MouseMove);
             this.drawareapanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.drawareapanel_MouseUp);
             // 
+            // documentationToolStripMenuItem
+            // 
+            this.documentationToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.documentationToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.documentationToolStripMenuItem.Name = "documentationToolStripMenuItem";
+            this.documentationToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.documentationToolStripMenuItem.Text = "Documentation";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -421,7 +431,6 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Main_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Main_MouseUp);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
@@ -467,6 +476,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem aboutUSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem documentationToolStripMenuItem;
     }
 }
 
